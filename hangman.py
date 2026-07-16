@@ -7,12 +7,17 @@ playing = True
 
 while playing == True:
 
+    word = RandomWords().get_random_word()
+
     for lives in range(6):
         print("Lives left: " + str(6 - lives))
         guess = input("Guess a letter:\n")
-
-        for letter in guess:
-            if letter in word:
-                print("Correct!")
-            else:
-                print("Incorrect!")
+        
+        if len(guess) > 1:
+            print("Not a valid guess. Please enter a single letter.")
+        else:    
+            for letter in guess:
+                if letter in word:
+                    print("Correct!")
+                else:
+                    print("Incorrect!")
