@@ -41,9 +41,9 @@ while playing:
                 continue
         
 
-        #Check if the letter has already been guessed, if so, ask for a new letter
+        #Otherwise, process the guess
         else:
-            
+
             #Check if the letter has already been guessed, if so, ask for a new letter
             if letter in guessed or letter in wrong_letters:
                 print("You have already guessed that letter, please try again.")
@@ -57,10 +57,8 @@ while playing:
                     if ch == letter:
                         guessed[i] = letter
             
-            #If the letter is not in the secret word, check if it has already been guessed incorrectly, if not, add to wrong letters and decrement lives
+            #If the letter is not in the secret word, add it to wrong letters and decrement lives
             else:
-                
-                #Check if the letter has already been guessed incorrectly, if not, add to wrong letters and decrement lives
                 if letter not in wrong_letters:
                     wrong_letters.append(letter)
                 lives -= 1
@@ -83,11 +81,11 @@ while playing:
         print("Please enter a valid response.")
         play_again = input("Do you want to play again? (yes/no): ").lower();
 
-    #If the player does not want to play again, set playing to False and print a message, otherwise print a separator
-    if play_again != "yes":
+    #If the player does not want to play again, set playing to False and print a message
+    if play_again == "no":
         playing = False
         print("Thanks for playing!")
 
-    #If the player wants to play again, print a separator
-    elif play_again == "no":
+    #If the player wants to play again, print a separator before the next game
+    else:
         print("-----\n")
