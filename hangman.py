@@ -1,7 +1,7 @@
 """
 Hangman Game
 
-By: Anay Mediwala, Kyle Arnold, Jayvant Rajesh
+By: Anay Mediwala, Kyle Arnold, Jayvant Rajesh, Sreyas Yelisetti
 """
 
 #import the random module to select a random word from the list of words
